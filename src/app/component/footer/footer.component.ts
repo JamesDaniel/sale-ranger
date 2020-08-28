@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { WindowRefService } from '../../service/window-ref/window-ref.service';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +8,30 @@ import { WindowRefService } from '../../service/window-ref/window-ref.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private winRef: WindowRefService) { }
+  footerPosition: string = 'relative';
+
+
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
+    
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (this.isScrollBar()) {
+      this.footerPosition = 'relative';
+    } else {
+      this.footerPosition = 'fixed';
+    }
+  }
+
+  isScrollBar() {
+    return this.document.children.item(0).scrollHeight > this.document.children.item(0).clientHeight;
   }
 
   ngAfterContentInit(): void {
-    // this.winRef.nativeWindow.alert('hello');
+    this.onResize(null);
   }
 
 }

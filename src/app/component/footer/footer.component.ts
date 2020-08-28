@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WindowRefService } from '../../service/window-ref/window-ref.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private winRef: WindowRefService) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterContentInit(): void {
+    // this.winRef.nativeWindow.alert('hello');
   }
 
 }

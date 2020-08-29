@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ParentComponent } from './component/parent/parent.component';
-import { NavComponent } from './component/nav/nav.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { CarouselComponent } from './component/carousel/carousel.component';
+import { NavComponent } from './component/widget/nav/nav.component';
+import { FooterComponent } from './component/widget/footer/footer.component';
+import { CarouselComponent } from './component/widget/carousel/carousel.component';
 
 @NgModule({
   declarations: [

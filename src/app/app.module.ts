@@ -6,13 +6,15 @@ import { ParentComponent } from './component/parent/parent.component';
 import { NavComponent } from './component/widget/nav/nav.component';
 import { FooterComponent } from './component/widget/footer/footer.component';
 import { CarouselComponent } from './component/widget/carousel/carousel.component';
+import { HomeComponent } from './component/page/home/home.component';
 
 @NgModule({
   declarations: [
     ParentComponent,
     NavComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
   title = 'SaleRanger';
+
+  searchText: string = "";
+
+  search(searchText: string) {
+    console.log(searchText);
+  }
 }
